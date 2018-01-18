@@ -1,0 +1,34 @@
+@import "reset";
+
+$main: #52B3D9;
+$background: #ECECEC;
+$font: helvetica;
+$button: #FFFFFF;
+$buttonBackground: orange;
+$buttonPadding: 5px;
+
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+body{
+	background-color: $background;
+	font-family: $font;
+}
+
+nav{
+	ul{
+		background-color: $main;
+	}
+}
+
+.container{
+	display: flex;
+
+	.stats{
+		
+	}
+}
