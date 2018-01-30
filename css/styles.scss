@@ -1,11 +1,13 @@
 @import "reset";
 
-$main: #52B3D9;
-$background: #ECECEC;
+$main: #1c252c;
+$background: #6C7A89;
+$box1: #446CB3;
+$box2: #F03434;
+$shadow: #192128;
 $font: helvetica;
-$button: #FFFFFF;
-$buttonBackground: orange;
-$buttonPadding: 5px;
+$background1: #313b44;
+$background2: #21282f;
 
 @mixin border-radius($radius){
 	-webkit-border-radius: $radius;
@@ -14,21 +16,85 @@ $buttonPadding: 5px;
 	border-radius: $radius;
 }
 
-body{
+/* body{
 	background-color: $background;
+	//background: linear-gradient(to right, $background1, $background2);
+	font-family: $font;
+	width: 90%;
+	margin: auto;
+}
+
+h1{
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	color: white;
+}
+
+h2{
+	@extend h1;
+	font-size: 30px;
+}
+
+.container{
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+
+	div{
+		//border: 1px solid black;
+		width: 40%;
+		padding: 20px;
+		background: $box1;
+  		color: white;
+  		box-shadow: 0px 0px 20px 0px $shadow;
+	}
+
+	.stats{
+		background-image: -webkit-linear-gradient(85deg, $main 70%, $box1 10%);
+	}
+
+	.budget{
+		background-image: -webkit-linear-gradient(85deg, $main 70%, $box2 10%);
+	}
+} */
+
+body{
 	font-family: $font;
 }
 
-nav{
+ul{
+	li{
+		font-size: 20px;
+		margin-bottom: 5px;
+	}
+}
+
+.box{
+	background-color: black;
+	border: 1px solid black;
+}
+
+#stats{
+	background-color: $box2;
+	text-align: center;
+}
+
+.pentagon{
+	margin: auto;
+  	text-align: center;
+  	margin-top: 30px;
+}
+
+.box{
 	ul{
-		background-color: $main;
+		color: white;
+		font-size: 20px;
 	}
 }
 
 .container{
-	display: flex;
-
-	.stats{
-		
-	}
+	margin-top: 50px;
 }

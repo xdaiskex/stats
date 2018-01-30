@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Stats</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<h1>Character Stats</h1>
 	<div class="container">
-		<div class="stats">
-			<h2>Stats</h2>
-		</div>
-		<div class="budget">
-			<h2>Budget</h2>
-		</div>
-		<div class="calories">
-			<h2>Calories</h2>
+		<div class="row">
+			<div class="col box">
+				<ul>
+					<li>
+						Strength: 20 
+						<span class="btn-group">
+							<button class="btn btn-primary">+</button>
+							<button class="btn btn-danger">-</button>
+						</span>
+					</li>
+					<li>Stamina: 20 
+						<span class="btn-group">
+							<button class="btn btn-primary">+</button>
+							<button class="btn btn-danger">-</button>
+						</span>
+					</li>
+					<li>Willpower: 20 
+						<span class="btn-group">
+							<button class="btn btn-primary">+</button>
+							<button class="btn btn-danger">-</button>
+						</span>
+					</li>
+					<li>Intellect: 20 
+						<span class="btn-group">
+							<button class="btn btn-primary">+</button>
+							<button class="btn btn-danger">-</button>
+						</span>
+					</li>
+					<li>Charisma: 20 
+						<span class="btn-group">
+							<button class="btn btn-primary">+</button>
+							<button class="btn btn-danger">-</button>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col box" id="stats"></div>
 		</div>
 	</div>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<!-- Stat Pentagon -->
+	<script src="js/stats.js"></script>
 </body>
 </html>
