@@ -73,25 +73,40 @@ ul{
 }
 
 .box{
-	background-color: black;
-	border: 1px solid black;
+	
 }
 
 #stats{
-	background-color: $box2;
 	text-align: center;
 }
 
 .pentagon{
 	margin: auto;
-  	text-align: center;
+  	justify-content: center;
   	margin-top: 30px;
 }
 
 .box{
-	ul{
+	display: flex;
+
+	table{
 		color: white;
 		font-size: 20px;
+		margin: auto;
+		justify-content: center;
+		width: 500px;
+
+		button{
+			border-radius: 0;
+		}
+
+		td{
+			vertical-align: middle;
+		}
+
+		.numbers, .buttons{
+			text-align: center;
+		}
 	}
 }
 

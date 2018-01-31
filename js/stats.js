@@ -3,11 +3,67 @@ onload = main;
 function main(){
 // Define player object and statistics
 var player = {};
-player.strength = 61;
-player.stamina = 45;
-player.willpower = 33;
-player.intellect = 69;
-player.charisma = 42;
+player.strength = 20;
+player.health = 20;
+player.willpower = 20;
+player.intellect = 20;
+player.charisma = 20;
+
+$("#strengthAdd").click(function(){
+    player.strength += 1;
+    redraw();
+    $("#strengthNum").html(player.strength)
+});
+$("#strengthMinus").click(function(){
+    player.strength -= 1;
+    redraw();
+    $("#strengthNum").html(player.strength)
+});
+
+$("#healthAdd").click(function(){
+    player.health += 1;
+    redraw();
+    $("#healthNum").html(player.health)
+});
+$("#healthMinus").click(function(){
+    player.health -= 1;
+    redraw();
+    $("#healthNum").html(player.health)
+});
+
+$("#willpowerAdd").click(function(){
+    player.willpower += 1;
+    redraw();
+    $("#willpowerNum").html(player.willpower)
+});
+$("#willpowerMinus").click(function(){
+    player.willpower -= 1;
+    redraw();
+    $("#willpowerNum").html(player.willpower)
+});
+
+$("#intellectAdd").click(function(){
+    player.intellect += 1;
+    redraw();
+    $("#intellectNum").html(player.intellect)
+});
+$("#intellectMinus").click(function(){
+    player.intellect -= 1;
+    redraw();
+    $("#intellectNum").html(player.intellect)
+});
+
+$("#charismaAdd").click(function(){
+    player.charisma += 1;
+    redraw();
+    $("#charismaNum").html(player.charisma)
+});
+$("#charismaMinus").click(function(){
+    player.charisma -= 1;
+    redraw();
+    $("#charismaNum").html(player.charisma)
+});
+
 // Array that takes information from the player object to get the order
 // in which stats are displayed onscreen. Change the order in which
 // the player stats are defined to change order.
@@ -16,13 +72,13 @@ for(var i in player)statOrder.push(i);
 // Define colors. I used simple three-digit hex colors, in this case.
 var statColors = {};
 /*statColors.strength = "#F89406";
-statColors.stamina = "#663399";
+statColors.health = "#663399";
 statColors.willpower = "#26A65B";
 statColors.intellect = "#446CB3";
 statColors.charisma = "#F03434";*/
 
 statColors.strength = "#3A539B";
-statColors.stamina = "#3A539B";
+statColors.health = "#3A539B";
 statColors.willpower = "#3A539B";
 statColors.intellect = "#3A539B";
 statColors.charisma = "#3A539B";
@@ -105,6 +161,7 @@ function MouseHandler(){
     document.onmousedown = this.click;
     document.onmouseup = this.release;
 }
+
 var vertices = [];
 function drawRegularPolygon(x, y, fill, stroke, strokeWidth, sides, radius){
 // Draws a regular polygon onto the canvas.
@@ -155,7 +212,7 @@ ctx.fill();*/
 
 var polygon = drawRegularPolygon(polygonX, polygonY, "#666", "black", 3, statOrder.length, polygonSize);
 ctx.beginPath();
-ctx.setLineDash([5]);
+ctx.setLineDash([0]);
 ctx.lineDashOffset = 10;
 ctx.strokeStyle = "#333";
 for(var i = 0; i < polygon.length; i ++){
@@ -177,6 +234,7 @@ var distY;
 var distTotal;
 var x;
 var y;
+
 for(var i = 0; i < statOrder.length+1; i ++){
     index = i % statOrder.length;
     if(vertices[index] === undefined)vertices[index] = {};
@@ -194,6 +252,7 @@ for(var i = 0; i < statOrder.length+1; i ++){
     innerPolygonVertices[index].y = y;
     ctx.lineTo(x, y);
 }
+
 // Set alpha of polygon
 ctx.globalAlpha = 0.8;
 ctx.fillStyle = innerPolygonColor;

@@ -5,47 +5,81 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Stats</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col box">
-				<ul>
-					<li>
-						Strength: 20 
-						<span class="btn-group">
-							<button class="btn btn-primary">+</button>
-							<button class="btn btn-danger">-</button>
-						</span>
-					</li>
-					<li>Stamina: 20 
-						<span class="btn-group">
-							<button class="btn btn-primary">+</button>
-							<button class="btn btn-danger">-</button>
-						</span>
-					</li>
-					<li>Willpower: 20 
-						<span class="btn-group">
-							<button class="btn btn-primary">+</button>
-							<button class="btn btn-danger">-</button>
-						</span>
-					</li>
-					<li>Intellect: 20 
-						<span class="btn-group">
-							<button class="btn btn-primary">+</button>
-							<button class="btn btn-danger">-</button>
-						</span>
-					</li>
-					<li>Charisma: 20 
-						<span class="btn-group">
-							<button class="btn btn-primary">+</button>
-							<button class="btn btn-danger">-</button>
-						</span>
-					</li>
-				</ul>
+				<table class="table table-bordered table-hover table-dark">
+					<tr>
+						<td>Strength</td>
+						<td id="strengthNum" class="numbers">20</td>
+						<td class="buttons">
+							<button id="strengthAdd" class="btn btn-primary">
+								<i class="fas fa-plus"></i>
+							</button>
+							<button id="strengthMinus"class="btn btn-danger">
+								<i class="fas fa-minus"></i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Health</td>
+						<td id="healthNum" class="numbers">20</td>
+						<td class="buttons">
+							<button id="healthAdd" class="btn btn-primary">
+								<i class="fas fa-plus"></i>
+							</button>
+							<button id="healthMinus" class="btn btn-danger">
+								<i class="fas fa-minus"></i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Willpower</td>
+						<td id="willpowerNum" class="numbers">20</td>
+						<td class="buttons">
+							<button id="willpowerAdd" class="btn btn-primary">
+								<i class="fas fa-plus"></i>
+							</button>
+							<button id="willpowerMinus" class="btn btn-danger">
+								<i class="fas fa-minus"></i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Intellect</td>
+						<td id="intellectNum"class="numbers">20</td>
+						<td class="buttons">
+							<button id="intellectAdd" class="btn btn-primary">
+								<i class="fas fa-plus"></i>
+							</button>
+							<button id="intellectMinus" class="btn btn-danger">
+								<i class="fas fa-minus"></i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Charisma</td>
+						<td id="charismaNum" class="numbers">20</td>
+						<td class="buttons">
+							<button id="charismaAdd" class="btn btn-primary">
+								<i class="fas fa-plus"></i>
+							</button>
+							<button id="charismaMinus" class="btn btn-danger">
+								<i class="fas fa-minus"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+				
 			</div>
-			<div class="col box" id="stats"></div>
+
+			<div class="col box" id="stats">
+				
+			</div>
 		</div>
 	</div>
 
