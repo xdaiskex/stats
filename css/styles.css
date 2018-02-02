@@ -118,15 +118,23 @@ ul li {
       vertical-align: middle; }
     .box table .numbers, .box table .buttons {
       text-align: center; }
+  .box #submit {
+    margin: auto; }
 
 .container {
   margin-top: 50px; }
 
-.meter {
-  background-color: black; }
+.center {
+  text-align: center; }
 
-.exp {
-  background-color: #446CB3;
-  width: 30%; }
+.progress {
+  height: 50px;
+  background-color: black;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: helvetica;
+  margin-left: 5px; }
+  .progress .progress-bar span {
+    display: inline; }
 
 /*# sourceMappingURL=styles.css.map */

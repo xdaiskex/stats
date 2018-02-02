@@ -3,63 +3,113 @@ onload = main;
 function main(){
 // Define player object and statistics
 var player = {};
-player.strength = 20;
-player.health = 20;
-player.willpower = 20;
-player.intellect = 20;
-player.charisma = 20;
+var strength = $("#strengthNum").html();
+var health = $("#healthNum").html();
+var willpower = $("#willpowerNum").html();
+var intellect = $("#intellectNum").html();
+var charisma = $("#charismaNum").html();
+var exp = $(".progress-bar").html();
+exp = parseInt(exp);
+$(".progress-bar").css('width', exp+"%");
+/*$(".progress-bar").attr('')*/
+player.strength = parseInt(strength);
+player.health = parseInt(health);
+player.willpower = parseInt(willpower);
+player.intellect = parseInt(intellect);
+player.charisma = parseInt(charisma);
+
+$("#submit").click(function(event){
+    var strength = $("#strengthNum").html();
+    var health = $("#healthNum").html();
+    var willpower = $("#willpowerNum").html();
+    var intellect = $("#intellectNum").html();
+    var charisma = $("#charismaNum").html();
+    console.log(exp);
+
+    var stats = {
+        'strength': strength,
+        'health': health,
+        'willpower': willpower,
+        'intellect': intellect,
+        'charisma': charisma,
+        'exp': exp
+    };
+    $.post('update.php', stats, function(data){
+        //var result = $.trim(data);
+        //console.log(result);
+        $(".progress-bar").removeClass("animated bounceInLeft");
+
+        $(".progress-bar").addClass("animated flash");
+        $(".progress-bar").css('width', exp+"%");
+        $(".progress-bar").html(exp);
+        window.setTimeout(function() {
+            $(".progress-bar").removeClass("animated flash");
+        }, 1500);
+        
+    });
+});
 
 $("#strengthAdd").click(function(){
     player.strength += 1;
+    exp += 1;
     redraw();
     $("#strengthNum").html(player.strength)
 });
 $("#strengthMinus").click(function(){
     player.strength -= 1;
+    exp -= 1;
     redraw();
     $("#strengthNum").html(player.strength)
 });
 
 $("#healthAdd").click(function(){
     player.health += 1;
+    exp += 1;
     redraw();
     $("#healthNum").html(player.health)
 });
 $("#healthMinus").click(function(){
     player.health -= 1;
+    exp -= 1;
     redraw();
     $("#healthNum").html(player.health)
 });
 
 $("#willpowerAdd").click(function(){
     player.willpower += 1;
+    exp += 1;
     redraw();
     $("#willpowerNum").html(player.willpower)
 });
 $("#willpowerMinus").click(function(){
     player.willpower -= 1;
+    exp -= 1;
     redraw();
     $("#willpowerNum").html(player.willpower)
 });
 
 $("#intellectAdd").click(function(){
     player.intellect += 1;
+    exp += 1;
     redraw();
     $("#intellectNum").html(player.intellect)
 });
 $("#intellectMinus").click(function(){
     player.intellect -= 1;
+    exp -= 1;
     redraw();
     $("#intellectNum").html(player.intellect)
 });
 
 $("#charismaAdd").click(function(){
     player.charisma += 1;
+    exp += 1;
     redraw();
     $("#charismaNum").html(player.charisma)
 });
 $("#charismaMinus").click(function(){
     player.charisma -= 1;
+    exp -= 1;
     redraw();
     $("#charismaNum").html(player.charisma)
 });
@@ -113,7 +163,7 @@ function appendElement(type, properties, parent){
 var canvas = appendElement("canvas", {
     width: "480",
     height: "480",  
-    class: "pentagon",
+    class: "pentagon"
 });
 // Get canvas context.
 var ctx = canvas.getContext("2d");
